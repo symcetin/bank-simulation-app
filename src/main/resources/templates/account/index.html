@@ -35,11 +35,11 @@
           </thead>
           <tbody>
           <tr th:each="account : ${accountList}">
-            <td th:text="${account.getUserID()}"></td>
-            <td th:text="${account.getAccountStatus()}"></td>
-            <td th:text="${account.getBalance()}"></td>
-            <td th:text="${account.getAccountType()}"></td>
-            <td th:text="${account.getCreationDate()}"></td>
+            <td th:text="${account.userID}"></td>
+            <td th:text="${account.accountStatus}"></td>
+            <td th:text="${account.balance}"></td>
+            <td th:text="${account.accountType}"></td>
+            <td th:text="${account.creationDate}"></td>
 
             <td>
               <a th:if="${account.accountStatus.name()=='ACTIVE'}" class="btn btn-danger" th:href="@{/delete/{id}(id=${account.id})}">Delete</a>
@@ -50,8 +50,8 @@
           </tbody>
         </table>
       </div>
-      <p class="my-5"><a th:href="@{create-user}" class="btn btn-primary">Create Account<i class="fas fa-user-plus ml-2"></i></a></p>
-      <p class="my-5"><a href="#" class="btn btn-primary">Make Transfer<i class="fas fa-user-plus ml-2"></i></a></p>
+      <p class="my-5"><a th:href="@{/create-form}" class="btn btn-primary">Create Account<i class="fas fa-user-plus ml-2"></i></a></p>
+      <p class="my-5"><a th:href="@{/make-transfer}" class="btn btn-primary">Make Transfer<i class="fas fa-user-plus ml-2"></i></a></p>
     </div>
   </div>
 </div>
