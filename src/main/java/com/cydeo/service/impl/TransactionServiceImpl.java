@@ -60,7 +60,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     private boolean checkSenderBalance(Account sender, BigDecimal amount) {
-        //verify that sender has enough balance
+            //verify that sender has enough balance
         return sender.getBalance().subtract(amount).compareTo(BigDecimal.ZERO) >=0;
     }
 
@@ -72,7 +72,7 @@ public class TransactionServiceImpl implements TransactionService {
          */
 
         if((sender.getAccountType().equals(AccountType.SAVING)
-                ||receiver.getAccountType().equals(AccountType.SAVING))&& !sender.getUserID().equals(receiver.getUserID()))
+                ||receiver.getAccountType().equals(AccountType.SAVING))&& !sender.getUserId().equals(receiver.getUserId()))
         {
             throw new AccountOwnershipException("One of the accounts is Savings." +
                     " Transactions between savings and checking account are allowed between same user accounts only." +
@@ -113,7 +113,17 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public List<Transaction> lastTransactionsList() {
-        //we want to list latest 10 transactions
+        //we want to list latest 10 transaction
         return transactionRepository.lastTransactions();
+
     }
+
+
+    @Override
+    public List<Transaction> findTransactionListById(UUID id) {
+
+        return transactionRepository.findTransactionListById(id);
+    }
+
+
 }

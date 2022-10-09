@@ -4,7 +4,6 @@ import com.cydeo.enums.AccountStatus;
 import com.cydeo.enums.AccountType;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -18,6 +17,7 @@ public class Account {
     private BigDecimal balance;
     private AccountType accountType;
     private Date creationDate;
-    private Long userID;
+    private Long userId;
     private AccountStatus accountStatus;
+
 }
