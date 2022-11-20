@@ -8,11 +8,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.util.Date;
-
-
 
 @Getter
 @Setter
@@ -21,10 +20,9 @@ import java.util.Date;
 @Table(name = "accounts")
 @Entity
 public class Account {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
 
     private BigDecimal balance;
 
@@ -38,8 +36,5 @@ public class Account {
 
     @Enumerated(EnumType.STRING)
     private AccountStatus accountStatus;
-
-
-
 
 }

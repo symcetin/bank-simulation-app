@@ -23,7 +23,7 @@ public class TransactionDTO {
     @Positive
     private BigDecimal amount;
     @NotNull
-    @Size(min = 2,max = 250)
+    @Size(min=2,max=250)
     @Pattern(regexp = "^[a-zA-Z0-9]*$")
     private String message;
     private Date creationDate;

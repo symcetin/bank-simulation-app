@@ -1,8 +1,8 @@
 package com.cydeo.controller;
 
 
-import com.cydeo.dto.AccountDTO;
 import com.cydeo.enums.AccountType;
+import com.cydeo.dto.AccountDTO;
 import com.cydeo.service.AccountService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,11 +52,12 @@ public class AccountController {
     public String createAccount(@Valid @ModelAttribute("account") AccountDTO accountDTO, BindingResult bindingResult, Model model){
 
          if(bindingResult.hasErrors()){
+
              model.addAttribute("accountTypes", AccountType.values());
              return "account/create-account";
          }
-         accountService.createNewAccount(accountDTO.getBalance(),new Date(),
-                 accountDTO.getAccountType(), accountDTO.getUserId());
+
+         accountService.createNewAccount(accountDTO);
 
         return "redirect:/index";
     }

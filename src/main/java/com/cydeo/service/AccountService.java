@@ -9,11 +9,13 @@ import java.util.List;
 
 public interface AccountService {
 
-AccountDTO createNewAccount(BigDecimal balance, Date creationDate, AccountType accountType, Long userId);
+    void createNewAccount(AccountDTO accountDTO);
 
-List<AccountDTO> listAllAccount();
+    List<AccountDTO> listAllAccount();
 
     void deleteAccount(Long id);
 
-    AccountDTO retrieveById(Long sender);
+    AccountDTO retrieveById(Long id);
+
+    List<AccountDTO> listAllActiveAccounts();
 }

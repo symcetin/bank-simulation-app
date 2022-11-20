@@ -16,7 +16,6 @@ import java.util.Date;
 public class AccountDTO {
 
     private Long id;
-
     @NotNull
     @Positive
     private BigDecimal balance;
