@@ -18,4 +18,6 @@ public interface AccountService {
     AccountDTO retrieveById(Long id);
 
     List<AccountDTO> listAllActiveAccounts();
+
+    void updateAccount(AccountDTO accountDTO);
 }

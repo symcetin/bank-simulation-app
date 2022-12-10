@@ -40,7 +40,7 @@ public class AccountController {
      @GetMapping("/create-form")
     public String getCreateForm(Model model){
 
-        model.addAttribute("account", new AccountDTO());
+        model.addAttribute("accountDTO", new AccountDTO());
         model.addAttribute("accountTypes", AccountType.values());
 
          return "account/create-account";
@@ -49,7 +49,7 @@ public class AccountController {
      //create a /create post method that creates account in the service
     //then return the index page
     @PostMapping("/create")
-    public String createAccount(@Valid @ModelAttribute("account") AccountDTO accountDTO, BindingResult bindingResult, Model model){
+    public String createAccount(@Valid @ModelAttribute("accountDTO") AccountDTO accountDTO, BindingResult bindingResult, Model model){
 
          if(bindingResult.hasErrors()){
 
